@@ -6,7 +6,7 @@ While reading about IPv6 and the different address allocation methods I started 
 I have focused on 3 ways to do IPv6 address allocation: 
 * Next available
 * Random (coming soon)
-* Sparse (coming soon)
+* Sparse
 
 My hope is that this will help others and save them some time.
 
