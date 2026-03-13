@@ -59,4 +59,19 @@ This is all fine and good but what if you want to do sparse allocation outside t
 - 100100
 - ......
 
-From here it will go through and create a list of all possible binaries. The binaries are calculated based on the difference in prefix from the starting parent network and new prefix. From this list of binaries we construct the new IPv6 Network. 
+From here it will go through and create a list of all possible binaries. The binaries are calculated based on the difference in prefix from the starting parent network and new prefix. From this list of binaries we construct the new IPv6 Network.
+
+#### Random
+The Random script has three main parameters:
+* Starting Parent Network
+* New Prefix
+* Number of desired new networks
+
+I have added additional options for:
+* Output to a file in the same directory
+* Random Number Generator override
+
+Random allocation follows the same methodology of creating the binaries but from the list of binaries we randomly pick one and construct the new IPv6 Network. To save on run time and avoid large memory usage the script doesn't create an entire list unless it has to. Having a list to choose from and then removing our choice is how we avoid creating duplicates. Without a list I have found the probability of having duplicates high, which in turn created longer run times. 
+
+There are two files, one is for command line arguments and the other is user prompt base for the inputs. 
+
